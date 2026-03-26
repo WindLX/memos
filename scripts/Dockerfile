@@ -1,6 +1,8 @@
 FROM --platform=$BUILDPLATFORM golang:1.26.2-alpine AS backend
 WORKDIR /backend-build
 
+ENV GOPROXY=https://goproxy.cn
+
 # Install build dependencies
 RUN apk add --no-cache git ca-certificates
 

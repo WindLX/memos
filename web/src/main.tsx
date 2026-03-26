@@ -7,6 +7,7 @@ import { Toaster } from "react-hot-toast";
 import { RouterProvider } from "react-router-dom";
 import "./i18n";
 import "./index.css";
+import AnniversaryExperience from "@/components/AnniversaryExperience";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { refreshAccessToken } from "@/connect";
 import { AuthProvider, useAuth } from "@/contexts/AuthContext";
@@ -64,6 +65,7 @@ function Main() {
             <ViewProvider>
               <AppInitializer>
                 <RouterProvider router={router} />
+                <AnniversaryExperience />
                 <Toaster position="top-right" />
               </AppInitializer>
             </ViewProvider>

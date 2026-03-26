@@ -1,3 +1,4 @@
+import anniversaryThemeContent from "../themes/anniversary.css?raw";
 import defaultDarkThemeContent from "../themes/default-dark.css?raw";
 import paperThemeContent from "../themes/paper.css?raw";
 
@@ -5,7 +6,7 @@ import paperThemeContent from "../themes/paper.css?raw";
 // Types and Constants
 // ============================================================================
 
-const VALID_THEMES = ["system", "default", "default-dark", "paper"] as const;
+const VALID_THEMES = ["system", "default", "default-dark", "paper", "anniversary"] as const;
 
 export type Theme = (typeof VALID_THEMES)[number];
 export type ResolvedTheme = Exclude<Theme, "system">;
@@ -22,12 +23,14 @@ const THEME_CONTENT: Record<ResolvedTheme, string | null> = {
   default: null,
   "default-dark": defaultDarkThemeContent,
   paper: paperThemeContent,
+  anniversary: anniversaryThemeContent,
 };
 
 const THEME_COLORS: Record<ResolvedTheme, string> = {
   default: "#faf9f5",
   "default-dark": "#1d1f23",
   paper: "#f5ede4",
+  anniversary: "#fff7eb",
 };
 
 export const THEME_OPTIONS: ThemeOption[] = [
@@ -35,6 +38,7 @@ export const THEME_OPTIONS: ThemeOption[] = [
   { value: "default", label: "Light" },
   { value: "default-dark", label: "Dark" },
   { value: "paper", label: "Paper" },
+  { value: "anniversary", label: "Anniversary" },
 ];
 
 // ============================================================================
